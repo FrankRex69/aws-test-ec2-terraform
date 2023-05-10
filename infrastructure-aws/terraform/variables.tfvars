@@ -1,3 +1,5 @@
 aws_region = "us-east-1"
 aws_profile = "Perurex"
 aws_availability_zone = "us-east-1a"
+aws_ami_ec2 = "ami-007855ac798b5175e"
+aws_key_name = "main-key-1"
