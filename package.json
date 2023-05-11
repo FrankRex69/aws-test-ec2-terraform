@@ -1,0 +1,14 @@
+{
+  "name": "aws-test-ec2-terraform",
+  "version": "1.0.0",
+  "description": "Create resource Aws-Ec2 with Terraform and automatic deploy app node from Github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd infrastructure-aws/terraform && terraform init --var-file=variables.tfvars && terraform apply --var-file=variables.tfvars -auto-approve",
+    "stop": "cd infrastructure-aws/terraform && terraform destroy --var-file=variables.tfvars -auto-approve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

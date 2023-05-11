@@ -12,19 +12,14 @@ sudo apt install npm -y
 
 {* CLONE AND SETUP APP FROM GITHUB *}
 cd /var/www/html/
-sudo git clone https://github.com/FrankRex69/bcm
-cd /var/www/html/bcm/
-sudo npm run install:all
+sudo git clone https://github.com/FrankRex69/test-nodejs.git
+cd /var/www/html/test-nodejs/
+sudo npm init -y
+sudo npm install
 
 {* INSTALL AND SETUP PM2 *}
 sudo npm install pm2 -g
-{* setup PM2 for BACKEND *}
-cd /var/www/html/bcm/backend/
 sudo pm2 start main.js
-{* setup PM2 for FRONTEND REACT *}
-cd /var/www/html/bcm/frontend-react-noframework/
-sudo npm run build
-sudo pm2 serve build 3000 --spa 
 sudo pm2 save
 
 {* SETUP PROXY SERVER NGINX *}
