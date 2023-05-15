@@ -20,11 +20,12 @@ sudo npm run install:all
 sudo npm install pm2 -g
 {* setup PM2 for BACKEND *}
 cd /var/www/html/bcm/backend/
-sudo pm2 start main.js
+sudo pm2 start main.js --name "backend"
+sudo pm2 save
 {* setup PM2 for FRONTEND REACT *}
 cd /var/www/html/bcm/frontend-react-noframework/
 sudo npm run build
-sudo pm2 serve build 3000 --spa 
+sudo pm2 serve build/ 3000 --name "frontend" --spa 
 sudo pm2 save
 
 {* SETUP PROXY SERVER NGINX *}
